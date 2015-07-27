@@ -1,0 +1,16 @@
+{
+  "name": "wintersmith-image-generator",
+  "version": "1.0.0",
+  "author": "Michael Delaney <michael@fusepilot.com>",
+  "description": "Generate images on the fly for Wintersmith.",
+  "keywords": [
+    "wintersmith-image-generator",
+    "gm"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "coffee-script": "^1.7.1",
+    "gm": "^1.18.1",
+    "lodash": "^3.10.0"
+  }
+}
