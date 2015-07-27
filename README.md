@@ -12,7 +12,7 @@ Install globally or locally using npm
 npm install [-g] wintersmith-image-generator
 ```
 
-and add `wintersmith-image-generator` to your config.json
+And add `wintersmith-image-generator` to your config.json.
 
 ```json
 {
@@ -22,7 +22,7 @@ and add `wintersmith-image-generator` to your config.json
 }
 ```
 
-then configure
+Then configure the versions you'd like to generate.
 
 ```json
 {
@@ -32,15 +32,18 @@ then configure
         "resize": [300, 300]
       },
       "large": {
-        "resize": [800, 800]
+        "resize": [800, 800],
+        "mosaic": ""
       }
     }
   }
 }
 ```
 
-then use in your templates
+You can use most of the methods specified in the gm docs listed [here](http://aheckmann.github.io/gm/docs.html).
+
+Then use the generated version in your templates.
 
 ```jade
-  img(src=env.helpers.getImageUrl(contents, page.cover, 'large'))
+  img(src=env.helpers.getImageUrl(contents, '/path/to/myimage.png', 'large'))
 ````
