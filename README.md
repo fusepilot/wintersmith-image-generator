@@ -33,7 +33,7 @@ Then configure the versions you'd like to generate.
       },
       "large": {
         "resize": [800, 800],
-        "mosaic": ""
+        "sepia": ""
       }
     }
   }
