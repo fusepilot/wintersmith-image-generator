@@ -45,5 +45,11 @@ You can use most of the methods specified in the gm docs listed [here](http://ah
 Then use the generated version in your templates.
 
 ```jade
-  img(src=env.helpers.getImageUrl(contents, '/path/to/myimage.png', 'large'))
+h2 original images
+- for image in page.parent.pictures._.files
+  img(src=image.url)
+
+h2 resized images
+- for image in page.parent.pictures._.images_small
+  img(src=image.url)
 ````

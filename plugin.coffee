@@ -89,20 +89,21 @@ module.exports = (env, callback) ->
 
     return _.get(contents, treePath).url
 
-  env.registerGenerator 'images', (contents, callback) ->
-    images = getImages(contents)
+  for version of options.versions
+    do (version) ->
+      env.registerGenerator 'images_'+version, (contents, callback) ->
+        images = getImages(contents)
 
-    tree = {}
+        tree = {}
 
-    for image in images
-      parsed = path.parse image.filepath.relative
-      for version of options.versions
-        name = formatFileName(image.filepath.relative, version)
+        for image in images
+          parsed = path.parse image.filepath.relative
+          name = formatFileName(image.filepath.relative, version)
 
-        treePath = parsed.dir.split('/')
-        treePath.push name
-        _.set tree, treePath, new ImagePlugin(image.filepath, version)
+          treePath = parsed.dir.split('/')
+          treePath.push name
+          _.set tree, treePath, new ImagePlugin(image.filepath, version)
 
-    callback null, tree
+        callback null, tree
 
   callback()
