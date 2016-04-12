@@ -1,11 +1,13 @@
 gm = require 'gm'
 path = require 'path'
 fs = require 'fs'
+minimatch = require 'minimatch'
 _ = require 'lodash'
 
 module.exports = (env, callback) ->
 
   defaults =
+    pattern: '**/*.{png,jpg}'
     versions:
       thumbnail:
         resize: [100, 100]
@@ -19,7 +21,7 @@ module.exports = (env, callback) ->
   getImages = (contents) ->
     images = env.ContentTree.flatten contents
     images = images.filter (content) ->
-      content.filepath?.relative.match /(png|jpg)$/
+      minimatch content.filepath?.relative, options.pattern, {dot: false}
     return images
 
   formatFileName = (filename, version) ->

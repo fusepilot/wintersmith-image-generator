@@ -27,6 +27,7 @@ Then configure the versions you'd like to generate.
 ```json
 {
   "images": {
+    "match": "**/pictures/*.jpg",
     "versions": {
       "small": {
         "resize": [300, 300]
