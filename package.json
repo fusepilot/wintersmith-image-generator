@@ -1,6 +1,6 @@
 {
   "name": "wintersmith-image-generator",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": "Michael Delaney <michael@fusepilot.com>",
   "description": "Generate images on the fly for Wintersmith.",
   "keywords": [
